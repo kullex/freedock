@@ -1,0 +1,16 @@
+# Docs: https://caddyserver.com/docs/caddyfile
+*.yourdomain {
+    root /var/www/public
+    gzip
+    browse
+    log /var/log/caddy/access.log
+  
+    proxy /v2ray_path v2ray:8188 {
+      websocket
+      header_upstream -Origin
+    }
+
+    tls {
+        dns cloudflare
+    }
+}

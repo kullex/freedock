@@ -1,0 +1,37 @@
+### Paths #################################################
+
+# All Networks driver
+NETWORKS_DRIVER=bridge
+
+### CADDY #################################################
+
+CADDY_VERSION=latest
+CADDY_HOST_HTTP_PORT=80
+CADDY_HOST_HTTPS_PORT=445
+CADDY_HOST_DATA_PATH=./caddy/data
+CADDY_HOST_LOG_PATH=./caddy/log
+CADDY_HOST_SSL_PATH=./caddy/ssl
+WWW_ROOT_PATH=./caddy/www
+
+### SSL ###################################################
+
+CLOUDFLARE_EMAIL=
+CLOUDFLARE_API_KEY=
+
+### DOMAIN ################################################
+
+DOMAIN=
+
+### V2Ray #################################################
+
+V2RAY_PORT=
+
+V2RAY_BACKEND_UUID=
+V2RAY_FRONTEND_UUID=
+
+V2RAY_PATH=
+
+### Trojan ################################################
+
+TROJAN_PASSWORD=
+TROJAN_HTTPS_PORT=443
