@@ -29,7 +29,7 @@ install -Dm755 "$NAME" "$BINARYPATH"
 
 # waiting for ssl
 
-until [ `ls -A /ssl|wc -w` -eq 1 ]
+until [ `ls /ssl|wc -w` -eq 1 ]
 do
   >&2 echo "waiting for ssl certs..."
   sleep 1
