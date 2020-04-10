@@ -46,24 +46,24 @@ services:
      - "8188"
    networks:
      - frontend
-  depends_on: 
-    - caddy
+   depends_on: 
+     - caddy
 
-## Trojan-gfw #############################################
-trojan:
-  build:
-    context: ./trojan
-    args:
-      - TROJAN_PASSWORD=${TROJAN_PASSWORD}
-      - TROJAN_DOMAIN=${DOMAIN}
-  ports:
-    - "${TROJAN_HTTPS_PORT}:443"
-  volumes:
-    - ${CADDY_HOST_SSL_PATH}:/ssl
-    - ./trojan/configure.sh:/configure.sh
-  links:
-    - caddy:__DOCKER_CADDY__
-  depends_on: 
-    - caddy
+ ## Trojan-gfw #############################################
+ trojan:
+   build:
+     context: ./trojan
+     args:
+       - TROJAN_PASSWORD=${TROJAN_PASSWORD}
+       - TROJAN_DOMAIN=${DOMAIN}
+   ports:
+     - "${TROJAN_HTTPS_PORT}:443"
+   volumes:
+     - ${CADDY_HOST_SSL_PATH}:/ssl
+     - ./trojan/configure.sh:/configure.sh
+   links:
+     - caddy:__DOCKER_CADDY__
+   depends_on: 
+     - caddy
    networks:
      - frontend
