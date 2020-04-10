@@ -58,7 +58,6 @@ services:
      - "${TROJAN_HTTPS_PORT}:443"
    volumes:
      - ${CADDY_HOST_SSL_PATH}:/ssl
-     - ./trojan/configure.sh:/configure.sh
    links:
      - caddy:__DOCKER_CADDY__
    depends_on: 
