@@ -18,4 +18,4 @@ RUN apk add --no-cache --virtual .build-deps \
 
 WORKDIR /config
 
-CMD ["/bin/sh", "/configure.sh", "trojan", "config.json"]
+CMD ["/bin/sh", "/configure.sh", "/usr/local/bin/trojan", "config.json"]
