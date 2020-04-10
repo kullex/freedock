@@ -46,8 +46,6 @@ services:
      - "8188"
    networks:
      - frontend
-   depends_on: 
-     - caddy
 
  ## Trojan-gfw #############################################
  trojan:
