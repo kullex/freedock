@@ -1,5 +1,5 @@
 # Docs: https://caddyserver.com/docs/caddyfile
-*.yourdomain {
+*.yourdomain:443 {
     root /var/www/public
     gzip
     browse
@@ -14,3 +14,16 @@
         dns cloudflare
     }
 }
+
+*.yourdomain:80 {
+    root /var/www/public
+    gzip
+    browse
+    log /var/log/caddy/access.log
+  
+    proxy /v2ray_path v2ray:8188 {
+      websocket
+      header_upstream -Origin
+    }
+}
+
